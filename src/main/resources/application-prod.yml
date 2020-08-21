@@ -1,0 +1,14 @@
+spring:
+  thymeleaf:
+    cache: false
+  datasource:
+    name: dataSource
+    url: jdbc:log4jdbc:ArteryBase://IP:PORT/DATABASE
+    username: username
+    password: password
+    driver-class-name: net.sf.log4jdbc.sql.jdbcapi.DriverSpy
+  application:
+    name: ygkq
+
+
+

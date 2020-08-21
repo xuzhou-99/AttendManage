@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:aty="http://www.thunisoft.com">
+  <head>
+    <meta type="aty-meta" name="javaLocation" content="com.thunisoft.ygkq.ygkq.controller.UserManageController.java" th:remove="all">
+    <meta type="aty-meta" name="cssLocation" content="css/userManage.css" th:remove="all">
+    <meta type="aty-meta" name="jsLocation" content="js/userManage.js" th:remove="all">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <link rel="stylesheet" th:href="@{/webjars/artery/artery-ui.css}" />
+    <link rel="stylesheet" aty:import>
+    <link rel="stylesheet" th:href="@{/css/userManage.css}" />
+    <title>ygkq</title>
+    <base th:href="@{/}" />
+  </head>
+  <body>
+    <div id="app" style="height:100%;width:100%" v-cloak class="fd-app">
+      <aty-panel class="fd-main-searchCollection">
+        <aty-button ref="添加"  text="添加" @click="add"></aty-button>
+        <aty-input label="姓名" v-model="searchData.name"  label-position="left" class="fd-search-item"></aty-input>
+        <aty-input label="工号" v-model="searchData.bh"  class="fd-search-item" label-position="right"></aty-input>
+        <aty-button text="查询"  ></aty-button>
+      </aty-panel>
+      <aty-panel class="fd-main">
+        <aty-table ref="userlbTab" :pageable-data="queryData" @load-data="loadData">
+          <aty-table-column label="序号" fixed="left" type="index"></aty-table-column>
+          <aty-table-column label="姓名" align="center" prop="name"></aty-table-column>
+          <aty-table-column label="工号" prop="bh" align="center"></aty-table-column>
+          <aty-table-column label="部门" prop="corp" align="center"></aty-table-column>
+          <aty-table-column label="标识" prop="bs" align="center"></aty-table-column>
+          <aty-table-column label="操作列" width="200" align="center">
+            <template>
+              <aty-text text="查看" @click="check(props.row.bh)" class="fd-cursor-point fd-color-bule"></aty-text>
+              <aty-text text="编辑" @click="edit(props.row.bh)" class="fd-cursor-point fd-color-bule"></aty-text>
+              <aty-text text="删除" @click="deleteUser(props.row.bh)" class="fd-cursor-point fd-color-bule"></aty-text>
+            </template>
+          </aty-table-column>
+        </aty-table>
+      </aty-panel>
+      <aty-pagination></aty-pagination>
+    </div>
+  </body>
+  <script type="text/javascript" th:src="@{/webjars/vue/vue.min.js}"></script>
+  <script type="text/javascript" th:src="@{/webjars/artery/artery-ui.min.js}"></script>
+  <script type="text/javascript" aty:import></script>
+  <script type="text/javascript" th:src="@{/js/userManage.js}"></script>
+</html>

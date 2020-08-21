@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:aty="http://www.thunisoft.com">
+  <head>
+    <meta type="aty-meta" name="javaLocation" content="com.thunisoft.ygkq.ygkq.controller.YgkqController.java" th:remove="all">
+    <meta type="aty-meta" name="cssLocation" content="css/ygkq.css" th:remove="all"> 
+    <meta type="aty-meta" name="jsLocation" content="js/ygkq.js" th:remove="all">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta name="description" content="员工考勤">
+    <link rel="stylesheet" th:href="@{/webjars/artery/artery-ui.css}" />
+    <link rel="stylesheet" aty:import>
+    <link rel="stylesheet" th:href="@{/css/ygkq.css}" />
+    <title>员工考勤</title>
+    <base th:href="@{/}" />
+  </head>
+  <body>
+    <div id="app" style="height:100%;width:100%" v-cloak class="fd-app">
+      <aty-panel class="fd-top">
+        <aty-panel class="fd-user-info">
+          <aty-text text="userInfo.name" class="fd-userName"></aty-text>
+          <aty-icon type="ios-locked-outline" size="20" class="fd-changePwd" @click="changePwd"></aty-icon>
+          <aty-icon type="log-out" size="20" class="fd-logout" @click="logout"></aty-icon>
+
+        </aty-panel>
+      </aty-panel>
+      <aty-panel class="fd-main">
+        <aty-panel class="fd-main-left">
+          <aty-menu @select="select" width="220px">
+            <aty-submenu code="atysubmenu5398e502e9706a52fe7bdcee5683f014" text="用户管理">
+              <aty-menu-item code="ryzh" text="用户信息"></aty-menu-item>
+              <aty-menu-item code="modifyPassword/modifyPassword" text="修改信息"></aty-menu-item>
+              <aty-menu-item code="userManage" text="用户管理"></aty-menu-item>
+            </aty-submenu>
+            <aty-submenu code="atysubmenu5b9bc2fc8f72220490dfb18a8d48944e" text="考勤管理">
+              <aty-menu-item code="kqxx" text="考勤信息"></aty-menu-item>
+            </aty-submenu>
+          </aty-menu>
+        </aty-panel>
+        <aty-panel class="fd-main-right">
+          <aty-iframe :src="code"></aty-iframe>
+        </aty-panel>
+      </aty-panel>
+    </div>
+  </body>
+  <script type="text/javascript" th:src="@{/webjars/vue/vue.min.js}"></script>
+  <script type="text/javascript" th:src="@{/webjars/artery/artery-ui.min.js}"></script>
+  <script type="text/javascript" aty:import></script>
+  <script type="text/javascript" th:src="@{/js/ygkq.js}"></script>
+</html>

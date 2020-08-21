@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.thunisoft.ygkq.ygkq.mapper.RyzhMapper">
+
+    <resultMap id="resultMap" type="com.thunisoft.ygkq.ygkq.common.Ryzh">
+        <id property="bh" jdbcType="VARCHAR" column="C_BH"></id>
+        <result property="yx" jdbcType="VARCHAR" column="N_YX"></result>
+        <result property="corp" jdbcType="VARCHAR" column="C_BM"></result>
+        <result property="xssx" jdbcType="VARCHAR" column="N_XSSX"></result>
+        <result property="name" jdbcType="VARCHAR" column="C_XM"></result>
+        <result property="bs" jdbcType="VARCHAR" column="C_BS"></result>
+        <result property="password" jdbcType="VARCHAR" column="C_MM"></result>
+    </resultMap>
+
+<!--    <update id="updatePassword">-->
+<!--    </update>-->
+
+    <select id="getUserInfo" resultType="com.thunisoft.ygkq.ygkq.common.Ryzh">
+        SELECT "C_BH","C_XM","C_BM","C_BS"
+        FROM db_ygkq."T_RYZH"
+        WHERE "N_YX" = '1'
+        <if test="name != null and name!=''">
+            and "C_NAME" = #{name}
+        </if>
+        <if test="bh != null and bh!=''">
+            and "C_BH" = #{bh}
+        </if>
+        ORDER BY "N_XSSX"
+    </select>
+
+    <insert id="addUser" parameterType="com.thunisoft.ygkq.ygkq.common.Ryzh">
+        INSERT INTO db_ygkq."T_RYZH" ("C_ID","C_BH", "C_XM", "C_BM", "C_BS", "C_MM", "N_YX" )
+        VALUES
+	    (#{id},#{bh},#{name},#{corp},#{bs},#{password},#{yx});
+    </insert>
+
+    <select id="getUserList" resultType="com.thunisoft.ygkq.ygkq.common.Ryzh">
+        SELECT "C_BH" ,"C_XM" ,"C_BM" ,"C_BS"
+        FROM db.ygkq."T_RYZH"
+        WHERE "C_YX" = '1'
+        <if test="name != null and name != ''">
+            and "C_XM" = #{name}
+        </if>
+        <if test="bh !=null and bh !='' ">
+            and "C_BH" = #{bh}
+        </if>
+         order by "C_XSSX"
+    </select>
+</mapper>

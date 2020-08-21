@@ -1,0 +1,14 @@
+/*********************************************
+ * userManage CSS
+ *
+ * @author lenovo
+ * @date 2020-08-18
+ *********************************************/
+.fd-input{
+    width: 400px;
+}
+.fd-button-add{
+    background-color: rgb(46,124,219);
+    color: white;
+    margin: 0 5%;
+}

@@ -1,0 +1,46 @@
+spring:
+  thymeleaf:
+    cache: false
+  datasource:
+    name: dataSource
+    url: jdbc:log4jdbc:ArteryBase://172.23.22.186:6543/ygkq?currentSchema=db_ygkq&ApplicationName=ygkq&Charset=utf8
+    username: sa
+    password: tusc@6789#JKL
+    driver-class-name: net.sf.log4jdbc.sql.jdbcapi.DriverSpy
+    type: com.alibaba.druid.pool.DruidDataSource
+    druid:
+      driver-class-name: net.sf.log4jdbc.sql.jdbcapi.DriverSpy
+      filters: stat
+      maxActive: 20
+      initialSize: 1
+      maxWait: 60000
+      minIdle: 1
+      timeBetweenEvictionRunsMillis: 60000
+      minEvictableIdleTimeMillis: 300000
+      validationQuery: select 'x'
+      testWhileIdle: true
+      testOnBorrow: false
+      testOnReturn: false
+      poolPreparedStatements: true
+      maxOpenPreparedStatements: 20
+#      ## Druid StatViewServlet监控配置
+#      stat-view-servlet:
+#        enabled: true
+#        url-pattern: /druid/*
+#        reset-enable: false
+#        login-username: admin
+#        login-password: admin
+#        allow: 127.0.0.1
+#        deny:
+  application:
+    name: ygkq
+
+server:
+  port: 8080
+
+artery:
+  login:
+    indexUrl: ygkq
+    enabled: false
+
+

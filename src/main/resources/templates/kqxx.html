@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:aty="http://www.thunisoft.com">
+  <head>
+    <meta type="aty-meta" name="javaLocation" content="com.thunisoft.ygkq.ygkq.controller.KqxxController.java" th:remove="all">
+    <meta type="aty-meta" name="cssLocation" content="css/kqxx.css" th:remove="all">
+    <meta type="aty-meta" name="jsLocation" content="js/kqxx.js" th:remove="all">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <link rel="stylesheet" th:href="@{/webjars/artery/artery-ui.css}" />
+    <link rel="stylesheet" aty:import>
+    <link rel="stylesheet" th:href="@{/css/kqxx.css}" />
+    <title>ygkq</title>
+    <base th:href="@{/}" />
+  </head>
+  <body>
+  <div id="app" style="height:100%;width:100%" v-cloak class="fd-app">
+    <aty-panel class="fd-main-searchCollection">
+      <aty-button ref="打卡" text="打卡"></aty-button>
+      <aty-input label="姓名" v-model="formData.name" class="fd-input"></aty-input>
+      <aty-input label="工号" v-model="formData.bh" class="fd-input"></aty-input>
+      <aty-date-picker label="开始日期" v-model="formData.startTime" class="fd-input"></aty-date-picker>
+      <aty-date-picker label="结束日期" v-model="formData.endTime" class="fd-input"></aty-date-picker>
+      <aty-select label="考勤状态" class="fd-input" v-model="formData.status"></aty-select>
+      <aty-button text="查询"></aty-button>
+      <aty-button text="重置" @click="cancel"></aty-button>
+    </aty-panel>
+    <aty-panel class="fd-main">
+      <aty-table ref="kqxxlbTab">
+        <aty-table-column label="序号" type="index"></aty-table-column>
+        <aty-table-column label="姓名" prop="name"></aty-table-column>
+        <aty-table-column label="工号" prop="bh"></aty-table-column>
+        <aty-table-column label="上班时间" prop="sbsj"></aty-table-column>
+        <aty-table-column label="下班时间" prop="xbsj"></aty-table-column>
+        <aty-table-column label="考勤状态" prop="kqzt"></aty-table-column>
+        <aty-table-column label="备注" prop="bz"></aty-table-column>
+        <aty-table-column label="操作列">
+          <template>
+            <aty-text text="查看"></aty-text>
+            <aty-text text="编辑"></aty-text>
+            <aty-text text="删除"></aty-text>
+          </template>
+        </aty-table-column>
+      </aty-table>
+      <aty-pagination></aty-pagination>
+    </aty-panel>
+  </div>
+  </body>
+  <script type="text/javascript" th:src="@{/webjars/vue/vue.min.js}"></script>
+  <script type="text/javascript" th:src="@{/webjars/artery/artery-ui.min.js}"></script>
+  <script type="text/javascript" aty:import></script>
+  <script type="text/javascript" th:src="@{/js/kqxx.js}"></script>
+</html>

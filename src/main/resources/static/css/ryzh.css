@@ -1,0 +1,25 @@
+/*********************************************
+ * ryzh CSS
+ *
+ * @author lenovo
+ * @date 2020-08-17
+ *********************************************/
+.fd-app{
+    background-color: #f9f9f4;
+    border-radius: 8px;
+    height: 96%;
+    width: 90%;
+    padding-top: 64px;
+    position: relative;
+}
+.fd-userInfo{
+    font-size: 14px;
+    width: 200px;
+    position: relative;
+}
+.fd-user{
+    width: 360px;
+    height: 600px;
+    position: relative;
+    padding: 10px 10px 10px 10px;
+}

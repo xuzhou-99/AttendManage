@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.thunisoft.ygkq.ygkq.mapper.KqxxMapper">
+
+    <resultMap id="resultMap" type="com.thunisoft.ygkq.ygkq.common.Kqxx">
+        <id property="bh" jdbcType="VARCHAR" column="C_BH"></id>
+        <result property="rybh" jdbcType="VARCHAR" column="C_BH_RYZH"></result>
+        <result property="sbsj" jdbcType="VARCHAR" column="D_SBSJ"></result>
+        <result property="xbsj" jdbcType="VARCHAR" column="D_XBSJ"></result>
+        <result property="kqzt" jdbcType="VARCHAR" column="N_KQZT"></result>
+        <result property="bz" jdbcType="VARCHAR" column="C_BZ"></result>
+    </resultMap>
+
+
+
+
+
+</mapper>

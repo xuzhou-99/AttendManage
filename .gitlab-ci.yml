@@ -1,0 +1,10 @@
+# 定义stages
+stages:
+  - sonar
+sonarqube_preview:
+  stage: sonar
+  only:
+    - branches
+  script:
+    - pwd
+    - mvn verify sonar:sonar -Dsonar.host.url=http://sonar.thunisoft.com -Dsonar.login=3e95712277dd2498ede247317167302caef99a5e -Dsonar.branch.name=$CI_COMMIT_REF_NAME
